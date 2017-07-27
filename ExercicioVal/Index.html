@@ -1,0 +1,30 @@
+<DOCTYPE! html>
+    <html>
+        <head>
+            <title></title>
+        </head>
+        <body>
+            <h2>Index</h2>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                </tr>
+                <% foreach (var person in Model) {%>
+                    <tr>
+                        <td><%= Html.ActionLink("Details", "Details", person )%></td>
+                        <td><%= Html.Encode(person.Id) %></td>
+                        <td><%= Html.Encode(person.Name) %></td>
+                    </tr>
+                <% } %>
+            </table>
+            <p>
+                <%= Html.ActionLink("Create New", "Create") %>
+            </p>
+        </body>
+    </html>
